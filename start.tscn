@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://m1tboh8ibjlk"]
+
+[ext_resource type="Texture2D" uid="uid://cc4kn3skh3i8t" path="res://IMAGES/Start screen - Copy.png" id="1_1n0d2"]
+[ext_resource type="Script" uid="uid://dv33vhbt0g1yh" path="res://texture_button.gd" id="2_y5hus"]
+[ext_resource type="Texture2D" uid="uid://cpy66rna8pd4t" path="res://IMAGES/Start button - Copy.png" id="3_oiuna"]
+
+[node name="Node" type="Node"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_1n0d2")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(0.725, 0.725)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_left = -0.11000001
+anchor_top = -0.117000006
+anchor_right = 0.119
+anchor_bottom = 0.062000003
+offset_left = -0.27999115
+offset_top = -0.18399811
+offset_right = -0.08799744
+offset_bottom = 3.8239975
+script = ExtResource("2_y5hus")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
+position = Vector2(131, 58.999992)
+scale = Vector2(0.4656947, 0.5222222)
+texture = ExtResource("3_oiuna")
+
+[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
